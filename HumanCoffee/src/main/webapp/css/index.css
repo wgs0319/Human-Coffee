@@ -1,0 +1,50 @@
+/* ===================== 기본 스타일 ===================== */
+body {
+	padding: 0;
+}
+
+.index_desktop{
+    width: 100vw;
+  	margin: 0;
+  	padding: 0;
+  	box-sizing: border-box;
+  	background-color: #333;
+  	font-size: 24px;
+  	display: flex;
+  	flex-direction:column;
+}
+
+.index_desktop .index_top_pos {
+	top: 0;
+    width: 100%;
+    height: 120px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 상단에 고정 */
+    position: fixed;
+    z-index: 100;
+}
+
+.index_desktop .index_middle_pos {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    flex:1 ;
+    overflow: auto;
+    scrollbar-width: none;
+	.index_desktop .index_middle_pos::-webkit-scrollbar {
+	    display: none;
+	}
+
+}
+
+.index_desktop .index_bottom_pos {
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

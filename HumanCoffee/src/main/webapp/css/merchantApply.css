@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+.merchantApply .inner {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px 60px; /* 상단 패딩 줄임 (index.jsp 구조에 맞게) */
+}
+
+.merchantApply h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: 700;
+}
+
+.merchantApply .merchant-form {
+    background: #fff8f0;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.merchantApply .merchant-form .form-group {
+    margin-bottom: 20px;
+}
+
+.merchantApply .merchant-form label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #8B4513;
+}
+
+.merchantApply .merchant-form input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border 0.2s ease;
+}
+
+.merchantApply .merchant-form input:focus {
+    border-color: #8B4513;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
+}
+
+.merchantApply .merchant-form .submit-group {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.merchantApply .merchant-form button {
+    background: #8B4513;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+}
+
+.merchantApply .merchant-form button:hover {
+    background: #a0522d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+.merchantApply .merchant-form button:active {
+    transform: translateY(0);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .merchantApply .inner {
+        padding: 120px 15px 40px;
+    }
+    
+    .merchantApply h1 {
+        font-size: 28px;
+    }
+    
+    .merchantApply .merchant-form {
+        padding: 25px 15px;
+    }
+    
+    .merchantApply .merchant-form input {
+        font-size: 16px; /* iOS 확대 방지 */
+    }
+}
+
+@media (max-width: 480px) {
+    .merchantApply .inner {
+        padding: 100px 10px 30px;
+    }
+    
+    .merchantApply h1 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    
+    .merchantApply .merchant-form {
+        padding: 20px 15px;
+    }
+}

@@ -1,0 +1,432 @@
+@charset "UTF-8";
+
+header {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #F6F5F0 0%, #FEFEFE 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+  z-index: 9999;
+  top: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+header > .header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* 로고와 관리자 서비스 버튼을 포함하는 왼쪽 영역 */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  z-index: 10000;
+}
+
+/* Logo Styling */
+header .header .logo {
+  height: 75px;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+header .header .logo::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s;
+  opacity: 0;
+}
+
+header .header .logo:hover::before {
+  animation: shine 0.8s ease-in-out;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+}
+
+header .header .logo:hover {
+  transform: scale(1.05);
+}
+
+header .header .logo img {
+  height: 100%;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* adminService 영역 스타일 */
+header .header .adminService {
+  display: flex;
+  align-items: center;
+}
+
+/* Main Menu Styling */
+header .header .main-menu {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  z-index: 1000;
+  gap: 10px;
+}
+
+/* loginService 영역을 오른쪽 끝이 아닌 메인 메뉴 오른쪽에 배치 */
+header .header .loginService {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  z-index: 10000;
+}
+
+header .header .main-menu .item {
+  position: relative;
+  margin: 0 5px;
+}
+
+header .header .main-menu .item .item__name {
+  padding: 15px 25px 50px 25px;
+  font-size: 16px;
+  font-family: 'Nanum Gothic', Arial, sans-serif;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px 8px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover effect with animated underline */
+header .header .main-menu .item .item__name::after {
+  content: '';
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8B4513, #A0522D);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+header .header .main-menu .item:hover .item__name::after {
+  width: 80%;
+}
+
+header .header .main-menu .item:hover .item__name {
+  background: linear-gradient(135deg, #2c2a29, #1a1a1a);
+  color: #8B4513;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(44, 42, 41, 0.3);
+}
+
+/* Dropdown Content */
+header .header .main-menu .item .item__contents {
+  width: 280px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  display: none;
+  box-sizing: border-box;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+}
+
+header .header .main-menu .item:hover .item__contents {
+  display: block;
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+header .header .main-menu .item .item__contents .contents__menu {
+  background: linear-gradient(135deg, #2c2a29, #1e1e1e);
+  position: relative;
+}
+
+header .header .main-menu .item .item__contents .contents__menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8B4513, #A0522D);
+}
+
+/* 드롭다운 메뉴 스타일 - HTML 구조에 맞게 수정 */
+header .header .main-menu .item .item__contents .contents__menu ul.inner {
+  padding: 20px 0;
+  margin: 0;
+  list-style: none;
+}
+
+header .header .main-menu .item .item__contents .contents__menu ul.inner > li {
+  padding: 0;
+  margin: 0;
+}
+
+header .header .main-menu .item .item__contents .contents__menu ul.inner > li > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header .header .main-menu .item .item__contents .contents__menu ul.inner > li > ul > li {
+  padding: 0;
+  margin: 0;
+}
+
+header .header .main-menu .item .item__contents .contents__menu ul.inner > li > ul > li a,
+header .header .main-menu .item .item__contents .contents__menu ul.inner > li > ul > li form button {
+  display: block;
+  color: #ccc;
+  font-size: 14px;
+  padding: 12px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+header .header .main-menu .item .item__contents .contents__menu ul.inner > li > ul > li form button:hover {
+  color: #8B4513;
+  background: rgba(139, 69, 19, 0.1);
+  transform: scale(1.05);
+  padding-left: 25px;
+}
+
+.link-button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  color: #ccc;
+  font-size: 14px;
+  padding: 12px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.link-button:hover {
+  color: #8B4513;
+  background: rgba(139, 69, 19, 0.1);
+  transform: scale(1.05);
+  padding-left: 25px;
+}
+
+/* Login Button - 공통 스타일 (a 태그, button 태그 모두 적용) */
+header .header .btn,
+header .header form button.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  border: 2px solid #8B4513;
+  border-radius: 25px;
+  color: #8B4513;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, transparent, rgba(139, 69, 19, 0.05));
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  min-width: 100px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+header .header .btn::before,
+header .header form button.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+header .header .btn:hover::before,
+header .header form button.btn:hover::before {
+  left: 100%;
+}
+
+header .header .btn:hover,
+header .header form button.btn:hover {
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+}
+
+header .header .btn:active,
+header .header form button.btn:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+/* 로그인 버튼을 위한 form 스타일 - 인라인으로 표시 */
+header .header .loginService form {
+  display: inline-block;
+  margin: 0;
+}
+
+/* 로그인된 사용자 정보 영역 스타일 - 세로로 배치 */
+header .header .loginService .id-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  background: rgba(255, 248, 240, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(139, 69, 19, 0.2);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+  animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 180px;
+}
+
+/* 사용자 ID 표시 스타일 */
+header .header .loginService .id-info span {
+  font-size: 13px;
+  color: #5D4037;
+  font-weight: 600;
+  white-space: nowrap;
+  position: relative;
+  text-align: right;
+}
+
+/* 로그아웃 버튼을 위쪽에 배치 */
+header .header .loginService .btn {
+  order: -1;
+  padding: 6px 12px;
+  font-size: 13px;
+  min-width: 60px;
+}
+
+header .header .loginService .login-btn-container {
+  margin-left: 16px; /* 오른쪽 여백 추가 */
+}
+
+/* 애니메이션 */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  header .header {
+    width: 95%;
+    max-width: 1100px;
+  }
+  
+  header .header .main-menu .item .item__name {
+    padding: 15px 20px 50px 20px;
+    font-size: 15px;
+  }
+  
+  .left-section {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  header .header .main-menu {
+    gap: 5px;
+  }
+  
+  header .header .main-menu .item .item__name {
+    padding: 15px 15px 50px 15px;
+    font-size: 14px;
+  }
+  
+  header .header .btn,
+  header .header form button.btn {
+    width: 100px;
+    font-size: 14px;
+  }
+  
+  .left-section {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header > .header {
+    height: 80px;
+  }
+  
+  header .header .logo {
+    height: 50px;
+  }
+  
+  header .header .main-menu {
+    display: none; /* Mobile menu would need separate implementation */
+  }
+  
+  header .header .btn,
+  header .header form button.btn {
+    width: 80px;
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+  
+  .left-section {
+    gap: 15px;
+  }
+}

@@ -1,0 +1,114 @@
+
+        /* 메뉴 제목 */
+        .menu-header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: linear-gradient(135deg, #6B4423 0%, #A0522D 100%);
+            color: white;
+        }
+
+        .menu-header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .menu-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* 메뉴 영역 */
+        .menu-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .category h2 {
+            font-size: 28px;
+            border-bottom: 3px solid #6B4423;
+            display: inline-block;
+            padding-bottom: 6px;
+            margin-bottom: 30px;
+            color: #6B4423;
+            font-weight: bold;
+        }
+
+        /* 메뉴 아이템 */
+        .menu-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(107, 68, 35, 0.2);
+            border-color: #6B4423;
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        .menu-item h3 {
+            font-size: 18px;
+            margin: 10px 0 8px;
+            color: #6B4423;
+            font-weight: bold;
+        }
+
+        .menu-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* HOT/ICE 구분 스타일 */
+        .hot-item h3::before {
+            content: "🔥 ";
+            font-size: 16px;
+        }
+
+        .ice-item h3::before {
+            content: "🧊 ";
+            font-size: 16px;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .menu-list {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+            
+            .menu-item {
+                padding: 15px;
+            }
+            
+            .menu-item img {
+                width: 100px;
+                height: 100px;
+            }
+        }

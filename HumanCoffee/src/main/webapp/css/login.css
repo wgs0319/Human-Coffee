@@ -1,0 +1,179 @@
+/* login_form.jsp 전용 스타일 (signup.css와 유사) */
+
+/* 전체 페이지 */
+body {
+  font-family: 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(205, 133, 63, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* 로그인 박스 */
+.login-container .login-form {
+  background: rgba(255, 248, 240, 0.95);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+  width: 100%;
+  max-width: 450px;
+  border: 2px solid rgba(205, 133, 63, 0.3);
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+}
+
+/* 제목 */
+.login-container .login-form h2 {
+  text-align: center;
+  color: #5D4037;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(93, 64, 55, 0.1);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.login-container .login-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #8D6E63, #5D4037, #8D6E63);
+  border-radius: 2px;
+}
+
+/* 라벨 글자 크기 조정 */
+.login-container .login-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #5D4037;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+/* 입력 필드 */
+.login-container .login-form input[type="text"],
+.login-container .login-form input[type="password"] {
+  display: block;
+  width: 90%;
+  padding: 15px 20px;
+  border: 2px solid #D7CCC8;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  color: #5D4037;
+  margin:0 auto 20px auto;
+}
+
+.login-container .login-form input:focus {
+  outline: none;
+  border-color: #8D6E63;
+  box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.2);
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+/* 버튼 컨테이너 (세로 정렬) */
+.login-container .login-form .button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* 로그인 버튼 */
+.login-container .login-form .login-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #8D6E63 0%, #5D4037 50%, #3E2723 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-container .login-form .login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+  background: linear-gradient(135deg, #795548 0%, #4E342E 50%, #2E1A0E 100%);
+}
+
+/* 취소 버튼 */
+.login-container .login-form .cancel-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: transparent;
+  color: #8D6E63;
+  border: 2px solid #8D6E63;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-container .login-form .cancel-btn:hover {
+  background: #8D6E63;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(141, 110, 99, 0.3);
+  border-color: #5D4037;
+}
+
+/* 회원가입 버튼 */
+.login-container .login-form .signup-btn {
+   display: block;
+  width: auto;
+  margin: 0 auto;
+  padding: 8px 10px;
+  background: none;
+  border: none;
+  color: #5D4037;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-container .login-form .signup-btn:hover {
+  font-weight: 700;
+  text-decoration: underline;
+  color: #3E2723;
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate3d(0, 40px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}

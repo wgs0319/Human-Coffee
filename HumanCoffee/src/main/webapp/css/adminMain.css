@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.adminMain_container {
+    width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.adminMain_title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.adminMain_buttons {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.adminMain_btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.adminMain_btn:hover {
+    background-color: #45a049;
+}

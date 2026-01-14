@@ -1,0 +1,104 @@
+/* Company.css - 깔끔하게 리팩토링 */
+
+/* 전체 컨테이너 */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* 제목 */
+.comhistory_title {
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+/* 상단 버튼 영역 */
+.top-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+/* 버튼 공통 스타일 */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* 버튼 색상 구분 */
+.btn-register { background-color: #4CAF50; color: white; }
+.btn-edit     { background-color: #2196F3; color: white; }
+.btn-delete   { background-color: #e74c3c; color: white; }
+
+/* 버튼 호버 효과 */
+.btn-register:hover { background-color: #45a049; }
+.btn-edit:hover     { background-color: #0b7dda; }
+.btn-delete:hover   { background-color: #c0392b; }
+
+/* 버튼 그룹 */
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* 회사 정보 박스 */
+.company-info-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* 개별 항목 */
+.company-info-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.company-info-item strong {
+    width: 120px; /* 왼쪽 항목 넓이 고정 */
+    color: #555;
+}
+
+.company-info-item span {
+    color: #333;
+    word-break: break-word;
+}
+
+/* 날짜 및 상태 강조 */
+.company-indate,
+.company-outdate,
+.company-status {
+    font-weight: bold;
+}
+
+.company-status {
+    color: #e67e22; /* 기본 강조 색상 */
+}
+
+/* 상태별 색상 */
+.company-status[data-status="운영중"] { color: #2ecc71; }
+.company-status[data-status="폐업"]   { color: #e74c3c; }
+
+/* 반응형 */
+@media (max-width: 600px) {
+    .company-info-item {
+        flex-direction: column;
+    }
+    .company-info-item strong {
+        width: 100%;
+        margin-bottom: 4px;
+    }
+}

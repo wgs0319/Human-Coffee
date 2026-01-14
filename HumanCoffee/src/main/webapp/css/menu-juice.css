@@ -1,0 +1,180 @@
+
+        /* 메뉴 제목 */
+        .menu-header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #45B7D1 100%);
+            color: white;
+        }
+
+        .menu-header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .menu-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* 메뉴 영역 */
+        .menu-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .category h2 {
+            font-size: 28px;
+            border-bottom: 3px solid #FF6B6B;
+            display: inline-block;
+            padding-bottom: 6px;
+            margin-bottom: 30px;
+            color: #FF6B6B;
+            font-weight: bold;
+        }
+
+        /* 메뉴 아이템 */
+        .menu-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.2);
+            border-color: #FF6B6B;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #45B7D1);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 10px auto 15px;
+            display: block;
+            border: 3px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover img {
+            border-color: #FF6B6B;
+            transform: scale(1.05);
+        }
+
+        .menu-item h3 {
+            font-size: 18px;
+            margin: 15px 0 10px;
+            color: #FF6B6B;
+            font-weight: bold;
+        }
+
+        .menu-item h3::before {
+            content: "🍹 ";
+            font-size: 16px;
+        }
+
+        .menu-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* 특별 효과 - 과일별 색상 */
+        .strawberry h3 { color: #FF4757; }
+        .strawberry::before { background: linear-gradient(90deg, #FF4757, #FF6B8A); }
+
+        .lemon h3 { color: #FFA502; }
+        .lemon::before { background: linear-gradient(90deg, #FFA502, #FFD32A); }
+
+        .mango h3 { color: #FF7F50; }
+        .mango::before { background: linear-gradient(90deg, #FF7F50, #FFA500); }
+
+        .peach h3 { color: #FFB6C1; }
+        .peach::before { background: linear-gradient(90deg, #FFB6C1, #FF69B4); }
+
+        .grape h3 { color: #9B59B6; }
+        .grape::before { background: linear-gradient(90deg, #9B59B6, #8E44AD); }
+
+        .orange h3 { color: #FF8C00; }
+        .orange::before { background: linear-gradient(90deg, #FF8C00, #FF6347); }
+
+        .kiwi h3 { color: #32CD32; }
+        .kiwi::before { background: linear-gradient(90deg, #32CD32, #90EE90); }
+
+        .grapefruit h3 { color: #FF1744; }
+        .grapefruit::before { background: linear-gradient(90deg, #FF1744, #FF5722); }
+
+        .passion h3 { color: #E91E63; }
+        .passion::before { background: linear-gradient(90deg, #E91E63, #FF4081); }
+
+        .citrus h3 { color: #FFEB3B; }
+        .citrus::before { background: linear-gradient(90deg, #FFEB3B, #FFC107); }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .menu-list {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+            
+            .menu-item {
+                padding: 15px;
+            }
+            
+            .menu-item img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* 추가 정보 섹션 */
+        .info-section {
+            background: linear-gradient(135deg, #FFF8E1 0%, #F3E5F5 100%);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 20px;
+        }
+
+        .info-section h3 {
+            color: #FF6B6B;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            color: #666;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
